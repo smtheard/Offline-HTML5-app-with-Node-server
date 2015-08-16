@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html manifest="manifest.appcache">
+<head>
+	<title>Work Order</title>
+	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+	<script src="javascripts/scripts.js"></script> 
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+</head>
+	<body onload="getCurrentDate(document.getElementById('date'))">
+		<section id="contentWrapper">
+			<header>
+				<h1>Public Works Department - Work Order</h1>
+				<h2>By: dickey_theard</h2>
+			</header>
+			<section id="formSection">
+				<form id="workOrder" method="post" onsubmit="return formatAjaxCall(this, document.getElementById('callbackMsg'), document.getElementById('date'))">
+					<fieldset id="info">
+						<legend>Order Form</legend>
+						
+						<article id="generalInfo">
+							<label name="First Name">
+								First Name:
+							</label>
+							<input id="firstName" type="text" name="firstName" required autofocus>
+
+							<label name="Last Name">
+								Last Name:
+							</label>
+							<input id="lastName" type="text" name="lastName" required>
+						</article>
+
+						<article id="workDescription">
+							<aside id="descBox" class="reset">
+								<label name="Description">
+									Work Description:
+								</label>
+							</aside>
+							<aside id="dateBox">
+								<label name="Date">
+									Date Created:
+								</label>
+								<input id="date" type="text" name="Date" placeholder="mm/dd/yyyy" required>
+							</aside>
+							<textarea name="Description" form="workOrder" rows="15" cols="30" placeholder="Explain work to be done..." class="reset" required></textarea>
+						</article>
+						<article id="descriptionOptions">
+							<label name="severity">
+								Severity:
+							</label>
+							<select form="workOrder" required>
+						    	<option value="Minor">Minor</option>
+						    	<option value="Major">Major</option>
+						    	<option value="Urgent">Urgent</option>
+							</select>
+						</article>
+
+					</fieldset>
+
+					<fieldset id="locationField">
+						<legend> Location Information </legend>
+						
+						<label>Current Location</label>
+						<input id="geoLocateBtn" type="button" value="Get My Location" onclick="getGeoLocation(document.getElementById('displayLat'), document.getElementById('geoLocationLat'), document.getElementById('displayLong'), document.getElementById('geoLocationLong'), document.getElementById('displayAlt'), document.getElementById('geoLocationAlt'))" formnovalidate>
+						<label name="latitude">
+							Latitude:
+						</label>
+						<label id="displayLat" name="displayLat" class="resetHTML"></label>
+						<input id="geoLocationLat" name="Latitude" type="hidden" required>
+						<label name="longitude">
+							Longitude:
+						</label>
+						<label id="displayLong" name="displayLong" class="resetHTML"></label>
+						<input id="geoLocationLong" name="Longitude" type="hidden" required>
+						<label name="altitude">
+							Altitude:
+						</label>
+						<label id="displayAlt" name="displayAlt" class="resetHTML"></label>
+						<input id="geoLocationAlt" name="Altitude" type="hidden" required>
+					</fieldset>
+					<article id="submitBox">
+						<input id="submitBtn" type="submit" value="Submit Work Order">
+					</article>
+				</form>
+			</section>
+			<section>
+				<span id="callbackMsg"></span>
+			</section>
+			<footer id="copyright">
+				<hr></hr>
+				<p>&copy;2015 - All Rights Reserved</p>
+			</footer>
+		</section>
+	</body>
+	<head>
+		<script>
+			var formatAjaxCall = function(form, spanElement, dateElement) {
+				var formData = $(form).serializeArray();
+				var formattedFormData = formatData(formData);
+				ajaxCall(formattedFormData, spanElement, dateElement);
+				return false;
+			};
+		</script>
+	</head>
+</html>

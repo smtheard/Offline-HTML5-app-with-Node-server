@@ -1,0 +1,149 @@
+body {
+    background-color: #F9F9F9;
+    font-family: 'Open-Sans', 'arial';
+    font-size: 12pt;
+}
+
+h1 {
+    color: #003377;
+    text-align: center;
+    font-size: 32pt;
+}
+
+h2 {
+	color: #003377;
+	text-align: center;
+	font-size: 24pt;
+	margin-top: -20px;
+}
+
+section#contentWrapper {
+	background-color: #EEEEFF;
+	width: 800px;
+	margin: 0 auto;
+	margin-top: -35px;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+section#formSection {
+	width: 700px;
+	padding-left: 40px;
+	padding-right: 40px;
+}
+
+fieldset#info {
+	border-radius: 10px;
+	margin-bottom: 10px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+form > fieldset#info > article#generalInfo, article#workDescription {
+	float: left;
+	clear: both;
+}
+
+form > fieldset#info > article#generalInfo > label {
+	display: inline;
+	width: 140px;
+	text-align: right;
+	margin: 0px 7px 7px 0px;
+	float: left;
+}
+
+form > fieldset#info > article#generalInfo > input { 
+    display: inline;
+    float: left;
+}
+
+form > fieldset#info > article#generalInfo {
+	margin-bottom: 20px;
+}
+
+form > fieldset#info > article#workDescription > label {
+	display: block;
+	text-align: right;
+	margin: 0px 7px 7px 0px;
+	float:left;
+	clear: both;
+}
+
+form > fieldset#info > article#workDescription > textarea {
+	display: block;
+    float: left;
+    clear: both;
+	max-width: 682px;
+	width: 682px;
+	height: 200px;
+	max-height: 200px;
+}
+
+form > fieldset#info > article#workDescription > aside#descBox, aside#dateBox {
+	width: 342px;
+	float: left;
+	height: 20pt;
+	vertical-align: text-bottom;
+}
+
+aside#descBox {
+	clear:left;
+}
+
+aside#dateBox {
+	clear: right;
+}
+
+aside#dateBox, article#submitBox{
+	text-align: right;
+}
+
+form > fieldset#info > article#descriptionOptions {
+	float: left;
+	clear: both;
+	margin-top: 5px;
+}
+
+form > fieldset#locationField > label#displayLat {
+	display: inline;
+    float: left;
+    clear: right;
+    text-align: left;
+}
+
+form > fieldset#locationField > input#geoLocationLat {
+	visibility: hidden;
+}
+
+form > fieldset#locationField > label#displayLong {
+	display: inline;
+    float: left;
+    clear: right;
+    text-align: left;	
+} 
+
+form > fieldset#locationField > input#geoLocationLong {
+	visibility: hidden;
+}
+
+form > fieldset#locationField > label#displayAlt {
+	display: inline;
+    float: left;
+    clear: right;
+    text-align: left;	
+} 
+
+form > fieldset#locationField > input#geoLocationAlt {
+	visibility: hidden;
+}
+
+form > fieldset#locationField > label {
+	display: inline;
+	width: 140px;
+	text-align: right;
+	margin: 0px 7px 7px 0px;
+	float: left;
+	clear: left;
+}
